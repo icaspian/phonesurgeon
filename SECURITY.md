@@ -59,7 +59,7 @@ Instead, report the issue via one of the following private channels:
 2. **Direct Security Email**:
    Send an encrypted or plain email to:
    ```text
-   crimsonkix@gmail.com
+   security@phonesurgeon.dev
    ```
    *(Subject line format: `[SECURITY] Vulnerability in <Module/Component>`)*
 

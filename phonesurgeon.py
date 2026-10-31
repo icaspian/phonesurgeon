@@ -42,6 +42,10 @@ from modules.fastboot_tools import fastboot_tools_menu
 from modules.system_info import system_info_menu
 from modules.security_audit import security_audit_menu
 from modules.automation import automation_menu
+from modules.device_recovery import device_recovery_menu
+from modules.screen_mirror import screen_mirror_menu
+from modules.power_tools import power_tools_menu
+from modules.app_testing import app_testing_menu
 
 
 # ── Main Menu ─────────────────────────────────────────────────────────────────
@@ -63,6 +67,10 @@ MAIN_OPTIONS = [
     "🖥️   System Info",
     "🔒  Security Audit",
     "🤖  Automation & Scripts",
+    "🏥  Device Recovery Assistant",
+    "📺  Screen Mirror (Scrcpy)",
+    "⚡  Power Tools",
+    "🧪  App Testing & Debug",
     "─────────────────────",
     "🔄  Switch Device",
     "🏥  Re-run Setup Wizard",
@@ -85,8 +93,12 @@ MENU_HANDLERS = {
     "14": system_info_menu,
     "15": security_audit_menu,
     "16": automation_menu,
-    "18": lambda: select_device(),
-    "19": lambda: run_setup_wizard(force=True),
+    "17": device_recovery_menu,
+    "18": screen_mirror_menu,
+    "19": power_tools_menu,
+    "20": app_testing_menu,
+    "22": lambda: select_device(),
+    "23": lambda: run_setup_wizard(force=True),
 }
 
 
@@ -151,7 +163,7 @@ def main():
         handler = MENU_HANDLERS.get(choice)
         if handler:
             handler()
-        elif choice == "17":
+        elif choice == "21":
             continue
         else:
             ui.error("Invalid option. Try again.")
